@@ -1,4 +1,4 @@
-﻿/* Это класс, отвечающий за бизнес-логику по созданию задач.
+/* Это класс, отвечающий за бизнес-логику по созданию задач.
  * В реальном проекте он использовался бы одним или несколькими сервисами, предоставляющими API для клиентских приложений.
  *
  * Чтобы не усложнять тестовое задание, приняты следующие упрощения (их дорабатывать не нужно):
@@ -9,6 +9,7 @@
  * - используется БД SQLite.
  */
 using LinqToDB;
+using LinqToDB.Data;
 using System.Linq;
 
 namespace Fogsoft.SimpleTasks.Library
@@ -36,25 +37,21 @@ namespace Fogsoft.SimpleTasks.Library
 		/// <summary>
 		/// Назначает исполнителя на задачу.
 		/// </summary>
-		public void Assign(long taskId, long assigneeId)
+		public void Assign(long taskId, params long[] assigneeIds)
 		{
 			using var db = Db.Open();
-			db.Tasks
-				.Where(x => x.Id == taskId)
-				.Set(x => x.AssigneeId, assigneeId)
-				.Update();
+			db.BulkCopy(assigneeIds.Select(userId => new TaskUser() { TaskId = taskId, UserId = userId }));
 		}
 
 		/// <summary>
 		/// Снимает исполнителя с задачи.
 		/// </summary>
-		public void Unassign(long taskId)
+		public void Unassign(long taskId, long assigneeId)
 		{
 			using var db = Db.Open();
-			db.Tasks
-				.Where(x => x.Id == taskId)
-				.Set(x => x.AssigneeId, (long?)null)
-				.Update();
+			db.TasksUsers
+				.Where(x => x.TaskId == taskId && x.UserId == assigneeId)
+				.Delete();
 		}
 
 		/// <summary>
@@ -72,9 +69,10 @@ namespace Fogsoft.SimpleTasks.Library
 		public Task[] GetByAssignee(long assigneeId)
 		{
 			using var db = Db.Open();
-			return db.Tasks
-				.Where(x => x.AssigneeId == assigneeId)
-				.ToArray();
+			return db.TasksUsers.Where(x => x.UserId == assigneeId).Join(db.Tasks,
+						c => c.TaskId,
+						p => p.Id,
+						(c, p) => p).ToArray();
 		}
 	}
 }

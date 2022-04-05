@@ -32,5 +32,7 @@ namespace Fogsoft.SimpleTasks.Library
 		public ITable<Task> Tasks => GetTable<Task>();
 
 		public ITable<User> Users => GetTable<User>();
+
+		public ITable<TaskUser> TasksUsers => GetTable<TaskUser>();
 	}
 }

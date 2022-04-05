@@ -1,0 +1,10 @@
+D:\Projects\JuniorVK\SimpleTasks\JuniorSimpleTasks\SimpleTasks\Fogsoft.SimpleTasks.Library\bin\Debug\netcoreapp3.1\Fogsoft.SimpleTasks.Library.deps.json
+D:\Projects\JuniorVK\SimpleTasks\JuniorSimpleTasks\SimpleTasks\Fogsoft.SimpleTasks.Library\bin\Debug\netcoreapp3.1\Fogsoft.SimpleTasks.Library.dll
+D:\Projects\JuniorVK\SimpleTasks\JuniorSimpleTasks\SimpleTasks\Fogsoft.SimpleTasks.Library\bin\Debug\netcoreapp3.1\Fogsoft.SimpleTasks.Library.pdb
+D:\Projects\JuniorVK\SimpleTasks\JuniorSimpleTasks\SimpleTasks\Fogsoft.SimpleTasks.Library\obj\Debug\netcoreapp3.1\Fogsoft.SimpleTasks.Library.csproj.AssemblyReference.cache
+D:\Projects\JuniorVK\SimpleTasks\JuniorSimpleTasks\SimpleTasks\Fogsoft.SimpleTasks.Library\obj\Debug\netcoreapp3.1\Fogsoft.SimpleTasks.Library.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\JuniorVK\SimpleTasks\JuniorSimpleTasks\SimpleTasks\Fogsoft.SimpleTasks.Library\obj\Debug\netcoreapp3.1\Fogsoft.SimpleTasks.Library.AssemblyInfoInputs.cache
+D:\Projects\JuniorVK\SimpleTasks\JuniorSimpleTasks\SimpleTasks\Fogsoft.SimpleTasks.Library\obj\Debug\netcoreapp3.1\Fogsoft.SimpleTasks.Library.AssemblyInfo.cs
+D:\Projects\JuniorVK\SimpleTasks\JuniorSimpleTasks\SimpleTasks\Fogsoft.SimpleTasks.Library\obj\Debug\netcoreapp3.1\Fogsoft.SimpleTasks.Library.csproj.CoreCompileInputs.cache
+D:\Projects\JuniorVK\SimpleTasks\JuniorSimpleTasks\SimpleTasks\Fogsoft.SimpleTasks.Library\obj\Debug\netcoreapp3.1\Fogsoft.SimpleTasks.Library.dll
+D:\Projects\JuniorVK\SimpleTasks\JuniorSimpleTasks\SimpleTasks\Fogsoft.SimpleTasks.Library\obj\Debug\netcoreapp3.1\Fogsoft.SimpleTasks.Library.pdb

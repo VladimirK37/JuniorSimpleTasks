@@ -12,8 +12,8 @@ namespace Fogsoft.SimpleTasks.Tests
 		private long User0Id;
 		private long User1Id;
 
-		[OneTimeSetUp]
-		public void OneTimeSetUp()
+		[SetUp]
+		public void SetUp()
 		{
 			// всегда удаляем тестовую БД, если есть
 			var currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -49,21 +49,24 @@ namespace Fogsoft.SimpleTasks.Tests
 
 			taskManager.Assign(newTask.Id, User0Id);
 			tasks = taskManager.GetByAssignee(User0Id);
-			Assert.That(tasks.Length, Is.EqualTo(1), "теперь задача должна быть назначена на User0");
-			Assert.That(tasks[0].AssigneeId, Is.EqualTo(User0Id), "исполнитель должен быть User0");
+			Assert.That(tasks.Length, Is.EqualTo(1), "у задачи появился исполнитель User0Id");
+			Assert.That(tasks[0].Id, Is.EqualTo(newTask.Id), "задачи должны совпадать");
 
 			taskManager.Assign(newTask.Id, User1Id);
 			tasks = taskManager.GetByAssignee(User1Id);
-			Assert.That(tasks.Length, Is.EqualTo(1), "теперь задача должна быть назначена на User1");
-			Assert.That(tasks[0].AssigneeId, Is.EqualTo(User1Id), "исполнитель должен быть User1");
+			Assert.That(tasks.Length, Is.EqualTo(1), "у задачи появился исполнитель User1Id");
+			Assert.That(tasks[0].Id, Is.EqualTo(newTask.Id), "задачи должны совпадать");
 
-			taskManager.Unassign(newTask.Id);
+			taskManager.Unassign(newTask.Id, User0Id);
 			tasks = taskManager.GetByAssignee(User0Id);
-			Assert.That(tasks.Length, Is.EqualTo(0), "а теперь задача снова не должна быть назначена");
+			Assert.That(tasks.Length, Is.EqualTo(0), "у задачи удалили исполнителя User0Id");
+
+			taskManager.Unassign(newTask.Id, User1Id);
+			tasks = taskManager.GetByAssignee(User1Id);
+			Assert.That(tasks.Length, Is.EqualTo(0), "у задачи удалили исполнителя User1Id");
 
 			tasks = taskManager.GetAll();
 			Assert.That(tasks.Length, Is.EqualTo(1), "должна быть одна задача");
-			Assert.That(tasks[0].AssigneeId, Is.Null, "но в задаче, полученной из GetAll, не должно быть исполнителя");
 			AssertTask(tasks[0], newTask);
 		}
 
@@ -72,7 +75,28 @@ namespace Fogsoft.SimpleTasks.Tests
 			Assert.That(actual.Id, Is.EqualTo(expected.Id), "Id должно совпадать");
 			Assert.That(actual.Subject, Is.EqualTo(expected.Subject), "Subject должно совпадать");
 			Assert.That(actual.Description, Is.EqualTo(expected.Description), "Description должно совпадать");
-			Assert.That(actual.AssigneeId, Is.EqualTo(expected.AssigneeId), "AssigneeId должно совпадать");
+		}
+
+		[Test]
+		public void Assign_to_many_users_scenario()
+		{
+			var taskManager = new TaskManager();
+
+			var newTask = taskManager.Add("test2", "description2");
+			var tasks = taskManager.GetAll();
+			Assert.That(tasks.Length, Is.EqualTo(1), "должна быть одна новая задача");
+			AssertTask(tasks[0], newTask);
+
+			tasks = taskManager.GetByAssignee(User0Id);
+			Assert.That(tasks.Length, Is.EqualTo(0), "задача не должна быть назначена");
+
+			taskManager.Assign(newTask.Id, User0Id, User1Id);
+			tasks = taskManager.GetByAssignee(User0Id);
+			Assert.That(tasks.Length, Is.EqualTo(1), "у задачи появился исполнитель User0Id");
+			Assert.That(tasks[0].Id, Is.EqualTo(newTask.Id), "задача должна быть равна первой задаче newTask");
+			tasks = taskManager.GetByAssignee(User1Id);
+			Assert.That(tasks.Length, Is.EqualTo(1), "у задачи появился исполнитель User1Id");
+			Assert.That(tasks[0].Id, Is.EqualTo(newTask.Id), "задача должна быть равна первой задаче newTask");
 		}
 	}
 }

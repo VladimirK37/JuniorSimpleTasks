@@ -17,8 +17,5 @@ namespace Fogsoft.SimpleTasks.Library
 
 		[Column, Nullable]
 		public string Description { get; set; }
-
-		[Column, Nullable]
-		public long? AssigneeId { get; set; }
 	}
 }
