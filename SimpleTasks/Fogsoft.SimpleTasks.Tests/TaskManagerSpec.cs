@@ -55,7 +55,7 @@ namespace Fogsoft.SimpleTasks.Tests
 			taskManager.Assign(newTask.Id, User1Id);
 			tasks = taskManager.GetByAssignee(User1Id);
 			Assert.That(tasks.Length, Is.EqualTo(1), "у задачи появился исполнитель User1Id");
-			Assert.That(tasks[0].Id, Is.EqualTo(newTask.Id), "задачи должны совпадать");
+			Assert.That(tasks[0].Id, Is.EqualTo(newTask.Id), "обе задачи совпадать");
 
 			taskManager.Unassign(newTask.Id, User0Id);
 			tasks = taskManager.GetByAssignee(User0Id);
