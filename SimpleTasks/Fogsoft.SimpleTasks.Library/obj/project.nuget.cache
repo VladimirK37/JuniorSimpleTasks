@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "O8GyBTFYeKcQaEvcMRAUegMBM81ddUQQaE25Abpa/wjESWfl8LynhsziYRPltTWpcl3x1NCA9kp6GywpV8nPHg==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\JuniorVK\\SimpleTasks\\JuniorSimpleTasks\\SimpleTasks\\Fogsoft.SimpleTasks.Library\\Fogsoft.SimpleTasks.Library.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vladi\\.nuget\\packages\\linq2db\\3.4.3\\linq2db.3.4.3.nupkg.sha512",
+    "C:\\Users\\vladi\\.nuget\\packages\\linq2db.sqlite\\3.4.3\\linq2db.sqlite.3.4.3.nupkg.sha512",
+    "C:\\Users\\vladi\\.nuget\\packages\\microsoft.data.sqlite\\5.0.4\\microsoft.data.sqlite.5.0.4.nupkg.sha512",
+    "C:\\Users\\vladi\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.4\\microsoft.data.sqlite.core.5.0.4.nupkg.sha512",
+    "C:\\Users\\vladi\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
+    "C:\\Users\\vladi\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
+    "C:\\Users\\vladi\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
+    "C:\\Users\\vladi\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
+    "C:\\Users\\vladi\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.114.3\\stub.system.data.sqlite.core.netstandard.1.0.114.3.nupkg.sha512",
+    "C:\\Users\\vladi\\.nuget\\packages\\stylecop.analyzers\\1.1.0-beta004\\stylecop.analyzers.1.1.0-beta004.nupkg.sha512",
+    "C:\\Users\\vladi\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
+    "C:\\Users\\vladi\\.nuget\\packages\\system.data.sqlite.core\\1.0.114.3\\system.data.sqlite.core.1.0.114.3.nupkg.sha512",
+    "C:\\Users\\vladi\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}
